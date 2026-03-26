@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pimiento | Farm Management</title>
+    <meta name="description" content="A modern, clean, and minimalist web application for farm, farmer, and payment management.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <!-- Stylized icon -->
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                    </div>
+                    <span>Pimiento</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-target="dashboard-view">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#farmers" class="nav-item" data-target="farmers-view">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>Farmers</span>
+                </a>
+                <a href="#payments" class="nav-item" data-target="payments-view">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 18V6"></path></svg>
+                    <span>Payments</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">A</div>
+                    <div class="user-info">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1 id="page-title">Dashboard</h1>
+                <!-- Search and notifications could go here -->
+                <div class="topbar-actions">
+                </div>
+            </header>
+            
+            <div class="content-wrapper">
+                <!-- Dashboard View -->
+                <section id="dashboard-view" class="view-section active">
+                    <div class="dashboard-grid">
+                        <!-- Stat Cards -->
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <h3>Active Farmers</h3>
+                                <div class="stat-icon emerald"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                            </div>
+                            <div class="stat-value">124</div>
+                            <div class="stat-change positive"><span>&uarr;</span> 12% from last month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <h3>Total Area (Acres)</h3>
+                                <div class="stat-icon emerald"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            </div>
+                            <div class="stat-value">3,450</div>
+                            <div class="stat-change positive"><span>&uarr;</span> 450 this season</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <h3>Pending Payments</h3>
+                                <div class="stat-icon amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
+                            <div class="stat-value">$12,450</div>
+                            <div class="stat-change negative"><span>&darr;</span> 4 invoices pending</div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="dashboard-card activity-feed">
+                            <div class="card-header">
+                                <h2>Recent Activity</h2>
+                                <button class="btn-text">View All</button>
+                            </div>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-emerald-light"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                                    <div class="activity-content">
+                                        <p class="activity-text"><strong>John Smith</strong> registered a new farm parcel.</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-amber-light"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+                                    <div class="activity-content">
+                                        <p class="activity-text"><strong>Maria Garcia</strong> submitted harvest documentation.</p>
+                                        <span class="activity-time">5 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-blue-light"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                                    <div class="activity-content">
+                                        <p class="activity-text">Payment of <strong>$1,250</strong> processed for <strong>Robert Johnson</strong>.</p>
+                                        <span class="activity-time">1 day ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Farmers View -->
+                <section id="farmers-view" class="view-section">
+                    <div class="page-header">
+                        <div class="header-content">
+                            <h2>Farmers Directory</h2>
+                            <p>Manage registered farmers and their parcel information.</p>
+                        </div>
+                        <button class="btn-primary" id="add-farmer-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            Add Farmer
+                        </button>
+                    </div>
+
+                    <div class="card table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Farmer Name</th>
+                                    <th>Contact</th>
+                                    <th>Location</th>
+                                    <th>Total Area</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="farmer-cell">
+                                            <div class="avatar small bg-emerald-light primary-text">JS</div>
+                                            <div class="farmer-info">
+                                                <span class="farmer-name">John Smith</span>
+                                                <span class="farmer-id">F-1029</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>+1 (555) 123-4567</td>
+                                    <td>North Valley, CA</td>
+                                    <td>120 Acres</td>
+                                    <td><span class="badge success">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="farmer-cell">
+                                            <div class="avatar small bg-blue-light blue-text">MG</div>
+                                            <div class="farmer-info">
+                                                <span class="farmer-name">Maria Garcia</span>
+                                                <span class="farmer-id">F-1030</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>+1 (555) 987-6543</td>
+                                    <td>Central Plains, TX</td>
+                                    <td>350 Acres</td>
+                                    <td><span class="badge success">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="farmer-cell">
+                                            <div class="avatar small bg-amber-light warning-text">RJ</div>
+                                            <div class="farmer-info">
+                                                <span class="farmer-name">Robert Johnson</span>
+                                                <span class="farmer-id">F-1031</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>+1 (555) 456-7890</td>
+                                    <td>West Hills, OR</td>
+                                    <td>85 Acres</td>
+                                    <td><span class="badge warning">Pending</span></td>
+                                    <td>
+                                        <button class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Payments View -->
+                <section id="payments-view" class="view-section">
+                    <div class="page-header">
+                        <div class="header-content">
+                            <h2>Payments & Invoices</h2>
+                            <p>Track transactions and process new payments.</p>
+                        </div>
+                        <button class="btn-primary" id="new-payment-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            New Payment
+                        </button>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <h3>Total Revenue</h3>
+                                <div class="stat-icon emerald"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            </div>
+                            <div class="stat-value">$145,200</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <h3>Pending</h3>
+                                <div class="stat-icon amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
+                            <div class="stat-value">$12,450</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <h3>Processed this week</h3>
+                                <div class="stat-icon emerald"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                            </div>
+                            <div class="stat-value">24</div>
+                        </div>
+                    </div>
+
+                    <div class="card table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Date</th>
+                                    <th>Farmer</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#TXN-84729</td>
+                                    <td>Oct 24, 2023</td>
+                                    <td>John Smith</td>
+                                    <td class="primary-text" style="font-weight: 600;">$1,250.00</td>
+                                    <td><span class="badge success">Completed</span></td>
+                                    <td><button class="btn-text">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-84728</td>
+                                    <td>Oct 23, 2023</td>
+                                    <td>Maria Garcia</td>
+                                    <td class="primary-text" style="font-weight: 600;">$3,450.00</td>
+                                    <td><span class="badge warning">Processing</span></td>
+                                    <td><button class="btn-text">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-84727</td>
+                                    <td>Oct 22, 2023</td>
+                                    <td>Robert Johnson</td>
+                                    <td class="primary-text" style="font-weight: 600;">$850.00</td>
+                                    <td><span class="badge success">Completed</span></td>
+                                    <td><button class="btn-text">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-84726</td>
+                                    <td>Oct 20, 2023</td>
+                                    <td>James Wilson</td>
+                                    <td class="primary-text" style="font-weight: 600;">$2,100.00</td>
+                                    <td><span class="badge danger">Failed</span></td>
+                                    <td><button class="btn-text">Retry</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Overlay for Add Farmer -->
+    <div class="modal-overlay" id="farmer-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Add New Farmer</h3>
+                <button class="btn-icon close-modal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-farmer-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter farmer's full name">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control" placeholder="(555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label>Total Area (Acres)</label>
+                            <input type="number" class="form-control" placeholder="e.g. 150">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" class="form-control" placeholder="City, State">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary close-modal">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Farmer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay for New Payment -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Process New Payment</h3>
+                <button class="btn-icon close-modal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            </div>
+            <div class="modal-body">
+                <form id="new-payment-form">
+                    <div class="form-group">
+                        <label>Select Farmer</label>
+                        <select class="form-control">
+                            <option>John Smith - F-1029</option>
+                            <option>Maria Garcia - F-1030</option>
+                            <option>Robert Johnson - F-1031</option>
+                            <option>James Wilson - F-1032</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Amount ($)</label>
+                            <input type="number" step="0.01" class="form-control" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <select class="form-control">
+                                <option>Bank Transfer</option>
+                                <option>Check</option>
+                                <option>Credit Card</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes (Optional)</label>
+                        <input type="text" class="form-control" placeholder="Invoice # or reference">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary close-modal">Cancel</button>
+                        <button type="submit" class="btn-primary">Process Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
